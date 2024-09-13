@@ -11,17 +11,28 @@ export const NewTask = () => {
   const [lists, setLists] = useState([]);
   const [title, setTitle] = useState("");
   const [detail, setDetail] = useState("");
+  const [deadline, setDeadline] = useState(""); // Added deadline state
   const [errorMessage, setErrorMessage] = useState("");
   const [cookies] = useCookies();
   const history = useNavigate();
+
   const handleTitleChange = (e) => setTitle(e.target.value);
   const handleDetailChange = (e) => setDetail(e.target.value);
+  const handleDeadlineChange = (e) => setDeadline(e.target.value); // Deadline change handler
   const handleSelectList = (id) => setSelectListId(id);
+
+  // Convert the deadline from `YYYY-MM-DDTHH:MM` to `YYYY-MM-DDTHH:MM:SSZ`
+  const formatDeadlineForServer = (deadline) => {
+    if (!deadline) return null;
+    return `${deadline}:00Z`; // Add seconds and Z for UTC
+  };
+
   const onCreateTask = () => {
     const data = {
       title: title,
       detail: detail,
       done: false,
+      limit: formatDeadlineForServer(deadline), // Send deadline in the correct format
     };
 
     axios.post(`${url}/lists/${selectListId}/tasks`, data, {
@@ -69,6 +80,8 @@ export const NewTask = () => {
           <input type="text" onChange={handleTitleChange} className="new-task-title" /><br />
           <label>詳細</label><br />
           <textarea type="text" onChange={handleDetailChange} className="new-task-detail" /><br />
+          <label>期限日時</label><br />
+          <input type="datetime-local" onChange={handleDeadlineChange} className="new-task-deadline" /><br />
           <button type="button" className="new-task-button" onClick={onCreateTask}>作成</button>
         </form>
       </main>

@@ -136,16 +136,35 @@ const Tasks = (props) => {
 
   // Helper to calculate the number of days left and format the deadline
   const getDaysLeft = (limit) => {
-    const now = dayjs();
-    const deadline = dayjs(limit);
-
+    const now = dayjs(); 
+    console.log(now);
+    const deadline = dayjs(limit.slice(0, 16)); // Zあるとutcに戻ってしまうのでsliceでZとる
+    console.log(limit);
+    console.log(deadline);
+  
     if (deadline.isBefore(now)) {
-      return "期限切れ"; // Show 'Expired' if the deadline has passed
+      return "期限切れ"; 
     }
-
-    const daysLeft = deadline.diff(now, 'day');
-    return daysLeft > 0 ? `残り${daysLeft} 日` : "今日が期限"; // Show the number of days left or 'due today'
-  };
+  
+    // 残り時間を分単位で計算
+    const totalMinutesLeft = deadline.diff(now, 'minute');
+  
+    // 日数、時間、分を計算
+    const daysLeft = Math.floor(totalMinutesLeft / (60 * 24)); // 残り日数
+    const hoursLeft = Math.floor((totalMinutesLeft % (60 * 24)) / 60); // 日数を除いた残り時間
+    const minutesLeft = totalMinutesLeft % 60; // 残りの分
+  
+    // 結果に応じたメッセージを返す
+    if (daysLeft > 0) {
+      return `残り${daysLeft}日${hoursLeft}時間${minutesLeft}分`; // 日数がある場合
+    } else if (hoursLeft > 0) {
+      return `残り${hoursLeft}時間${minutesLeft}分`; // 時間がある場合
+    } else if (minutesLeft > 0) {
+      return `残り${minutesLeft}分`; // 分のみの場合
+    } else {
+      return "残り０分"; // 今が期限の場合
+    }
+  };  
 
   const formatDeadline = (limit) => {
     if (!limit) return "期限なし";

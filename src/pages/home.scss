@@ -85,3 +85,66 @@
 .display-select {
   width: 100%;
 }
+
+/* for Tablet (768px) */
+@media (max-width: 768px) {
+  .taskList {
+    width: 90%; /* Adjust layout based on screen width */
+    margin: 20px auto; /* Reduce top and bottom margins */
+  }
+
+  .list-tab-item {
+    width: 80px; /* Reduce width of the tabs */
+    padding: 0 15px;
+  }
+
+  .task-item {
+    font-size: medium; /* Adjust font size */
+    padding: 10px 20px; /* Adjust padding */
+  }
+
+  .display-select-wrapper {
+    width: 80px; /* Reduce the size of the select box */
+  }
+}
+
+/* for Mobile (320px) */
+@media (max-width: 320px) {
+  .list-header, .tasks-header {
+    align-items: flex-start; /* Ensure alignment to the left */
+    flex-direction: column; /* Stack elements vertically */
+  }
+
+  .list-menu, .tasks-header a {
+    margin-top: 10px; /* Add some space between the header and the buttons */
+    display: block; /* Make sure the buttons are displayed as block elements */
+    text-align: left;
+    margin-bottom: 15px;
+  }
+
+  /* Additional tweaks for padding and spacing */
+  .taskList {
+    padding: 15px; /* Add some padding for spacing around the content */
+  }
+
+  .list-tab-item {
+    width: auto; /* Let tabs adjust to content width dynamically */
+    padding: 5px 15px; /* Add padding inside the tabs */
+  }
+
+  .task-item {
+    font-size: 1em; /* Ensure task items remain readable */
+    padding: 10px 15px; /* Add comfortable padding for readability */
+    background-color: #f8f8f8; /* Light background for task items */
+    margin-bottom: 10px; /* Space between task items */
+  }
+
+  .task-item-link {
+    font-weight: 500; /* Slightly bolder text for task links */
+  }
+
+  .task-item-time {
+    font-size: 0.85em; /* Smaller font for task time details */
+    color: #666666; /* Softer grey for less emphasis */
+  }
+}

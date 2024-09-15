@@ -13,3 +13,38 @@
   color: #ffffff;
   margin: auto 25px auto auto;
 }
+
+/* for Tablet (768px) */
+@media (max-width: 768px) {
+  .header {
+    height: 70px; /* Reduce height for tablets */
+    align-items: center; 
+  }
+
+  h1 {
+    font-size: 1.5em; /* Adjust title size for tablet */
+    margin-left: 25px;
+  }
+
+  .sign-out-button {
+    font-size: 1em; /* Slightly smaller font for tablet */
+    right: 15px; /* Adjust position for tablet */
+  }
+}
+
+/* for Mobile (320px) */
+@media (max-width: 320px) {
+  .header {
+    height: 60px; /* Reduce height for mobile */
+    align-items: center; 
+  }
+
+  h1 {
+    font-size: 1.3em; /* Smaller title size for mobile */
+  }
+
+  .sign-out-button {
+    font-size: 0.9em; /* Adjust button font size for mobile */
+    right: 10px; /* Adjust position for mobile */
+  }
+}

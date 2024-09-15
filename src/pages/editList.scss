@@ -34,3 +34,55 @@
 .error-message {
   color: #ff3333;
 }
+
+/* for Tablet (768px) */
+@media (max-width: 768px) {
+  .edit-list {
+    width: 90%;
+    padding: 25px; /* Increase padding for cleaner layout on tablet */
+    margin: 40px auto; /* Provide ample margin */
+  }
+
+  .edit-list-title {
+    width: 100%;
+    margin-bottom: 25px;
+    font-size: 1.4em; /* Slightly reduce title font size for tablet */
+  }
+
+  .delete-list-button, .edit-list-button {
+    width: 100%; /* Full-width buttons on tablet */
+    height: 50px; /* Larger buttons for touch interaction */
+    font-size: 1.1em; /* Slightly larger text for better readability */
+    margin: 15px 0; /* Add spacing between buttons */
+    padding: 12px 20px; /* Generous padding for touchable areas */
+  }
+}
+
+/* for Mobile (320px) */
+@media (max-width: 320px) {
+  .edit-list {
+    width: 95%; /* Almost full width for mobile */
+    margin: 0 auto;
+  }
+
+  .edit-list-title {
+    width: 100%; /* Full width on mobile */
+    margin-bottom: 15px; /* Reduce the bottom margin */
+    font-size: 1.2em; /* Increase font size for better readability */
+  }
+
+  .delete-list-button, .edit-list-button {
+    width: 100%; /* Make buttons full width on mobile */
+    height: 50px; /* Larger buttons for easier interaction */
+    margin: 10px 0; /* Space between the buttons */
+    font-size: 1.1em; /* Increase font size for better visibility */
+  }
+
+  .edit-list-form {
+    font-size: 1em; /* Increase form font size for readability on small screens */
+  }
+
+  .error-message {
+    font-size: 0.9em; /* Adjust error message size */
+  }
+}

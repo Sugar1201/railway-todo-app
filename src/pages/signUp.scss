@@ -2,7 +2,8 @@
 
 .signup {
   width: 500px;
-  margin: 0 auto;
+  margin: 50px auto; /* Increased top and bottom margin for better visual separation */
+  padding: 20px; /* Added padding for a padded layout */
 }
 .signup-form {
   margin: 25px 0;
@@ -26,4 +27,37 @@
 
 .error-message {
   color: #ff3333;
+}
+
+/* Responsive adjustments for Tablet (768px) */
+@media (max-width: 768px) {
+  .signup {
+    width: 90%; /* Adjust width for tablet screens */
+    padding: 15px; /* Slightly less padding */
+  }
+
+  .signup-form {
+    margin: 30px 0; /* Adjusted margin */
+  }
+}
+
+/* Responsive adjustments for Mobile (480px) */
+@media (max-width: 480px) {
+  .signup {
+    width: 95%; /* Further adjust width for mobile screens */
+    padding: 10px; /* Reduce padding for smaller screens */
+  }
+
+  .signup-form {
+    margin: 20px 0; /* Smaller margins */
+  }
+
+  .email-input, .name-input, .password-input {
+    font-size: 0.9em; /* Smaller font size for better fit */
+    height: 35px; /* Slightly smaller inputs */
+  }
+
+  .error-message {
+    font-size: 0.85em; /* Smaller error message font size */
+  }
 }

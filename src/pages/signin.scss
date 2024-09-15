@@ -2,7 +2,8 @@
 
 .signin {
   width: 500px;
-  margin: 0 auto;
+  margin: 50px auto; /* Increased top and bottom margin for better visual separation */
+  padding: 20px; /* Added padding for a padded layout */
 }
 
 .signin-form {
@@ -30,4 +31,46 @@
 
 .error-message {
   color: #ff3333;
+}
+
+/* for Tablet (768px) */
+@media (max-width: 768px) {
+  .signin {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .header {
+    height: 70px; /* Reduce height for tablets */
+  }
+
+  h2 {
+    font-size: 1.5em; /* Adjust title size for tablet */
+  }
+
+  .sign-out-button {
+    font-size: 1em; /* Slightly smaller font for tablet */
+    right: 15px; /* Adjust position for tablet */
+  }
+}
+
+/* for Mobile (320px) */
+@media (max-width: 320px) {
+  .signin {
+    width: 95%;
+    padding: 10px;
+  }
+
+  .header {
+    height: 60px; /* Reduce height for mobile */
+  }
+
+  h2 {
+    font-size: 1.3em; /* Smaller title size for mobile */
+  }
+
+  .sign-out-button {
+    font-size: 0.9em; /* Adjust button font size for mobile */
+    right: 10px; /* Adjust position for mobile */
+  }
 }

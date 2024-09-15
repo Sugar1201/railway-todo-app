@@ -34,3 +34,37 @@
 .error-message {
   color: #ff3333;
 }
+
+/* Responsive adjustments for Tablet (max-width: 768px) */
+@media (max-width: 768px) {
+  .edit-task {
+    width: 90%; /* Adjust width for tablet screens */
+    padding: 15px; /* Adjust padding for tablet */
+  }
+
+  .edit-task-title, .edit-task-detail, .edit-task-deadline {
+    width: 100%; /* Full width to utilize space efficiently */
+  }
+
+  .delete-task-button, .edit-task-button {
+    height: 45px; /* Adjust button height for tablet */
+  }
+}
+
+/* Responsive adjustments for Mobile (max-width: 320px) */
+@media (max-width: 320px) {
+  .edit-task {
+    width: 95%; /* Further adjust width for mobile screens */
+    padding: 10px; /* Reduce padding to fit small screens */
+    margin: 20px auto; /* Reduce margin to save space */
+  }
+
+  .edit-task-title, .edit-task-detail, .edit-task-deadline {
+    margin-bottom: 20px; /* Reduce margin to keep everything compact */
+  }
+
+  .delete-task-button, .edit-task-button {
+    font-size: 0.9em; /* Smaller font size for button labels */
+    height: 40px; /* Slightly smaller buttons to fit mobile UI */
+  }
+}

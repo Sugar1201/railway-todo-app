@@ -21,3 +21,39 @@
   height: 40px;
   border-radius: 5px;
 }
+
+/* Responsive adjustments for Tablet (max-width: 768px) */
+@media (max-width: 768px) {
+  .new-list {
+    width: 90%;
+    padding: 25px; /* Increase padding for cleaner layout on tablet */
+    margin: 40px auto; /* Provide ample margin */
+  }
+
+  .new-list-title {
+    width: 100%; /* Full width to utilize space efficiently */
+  }
+
+  .new-list-button {
+    width: 100%; /* Full width for better usability on tablets */
+    height: 45px; /* Slightly larger button for easier interaction */
+  }
+}
+
+/* Responsive adjustments for Mobile (max-width: 320px) */
+@media (max-width: 320px) {
+  .new-list {
+    width: 95%; /* Further adjust width for mobile screens */
+    padding: 10px; /* Reduce padding to fit small screens */
+    margin: 20px auto; /* Less margin to save space */
+  }
+
+  .new-list-title {
+    margin-bottom: 20px; /* Reduce bottom margin to keep things compact */
+  }
+
+  .new-list-button {
+    height: 40px; /* Maintain button height for consistency */
+    font-size: 0.9em; /* Adjust font size for better readability on mobile */
+  }
+}

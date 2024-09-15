@@ -61,8 +61,9 @@
 /* for Mobile (320px) */
 @media (max-width: 320px) {
   .edit-list {
-    width: 95%; /* Almost full width for mobile */
-    margin: 0 auto;
+    width: 95%; /* Further adjust width for mobile screens */
+    padding: 10px; /* Reduce padding to fit small screens */
+    margin: 20px auto; /* Less margin to save space */
   }
 
   .edit-list-title {
